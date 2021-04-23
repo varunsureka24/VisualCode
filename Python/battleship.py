@@ -101,34 +101,6 @@ def drawShotBoard(): #this is the board that the user shoots on. it is destinct 
         print("-", end="")
     print("")
 
-# def drawEnemyField(): #this is the function that prints where the enemy ships are. used for testing purposes
-#     print("  .a.b.c.d.e.f.g.h.i.j.")
-
-#     for i in range(100):
-#         if (i % 10 == 0):
-#             if (i != 0):
-#                 print("")
-
-#             for dot in range(23):
-#                 print("-", end="")
-
-#             print("")
-
-#             if ((i//10)+1 == 10):
-#                 print((i//10)+1, "|", end="", sep="")
-#             else:
-#                 print((i//10)+1, " |", end="", sep="")
-        
-#         marker = EnemyBoard[i]
-#         print(marker, end="")
-#         print("|", end="")
-
-#     print("")
-#     for dot in range(23):
-#         print("-", end="")
-#     print("")
-
-
 def positionCalc(spot): #this function calculates the position that the user has chosen. 
     x = ord(spot[0].lower()) - 97 #this uses the ord() function which returns the ascii value for the character that you give it. 
                                   #Then i subtract 97 from it because i need 'a' to equal 0 so that a1 is the first index of the array
