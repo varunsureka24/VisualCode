@@ -56,7 +56,7 @@ def drawUserField(): # this is the function I use to print the user field
         marker = MyBoard[i] #this takes the value at each index in the array and stores it as a character
         if (marker == 'X'): #if it is a hit, then the marker is colored red
             print(RED + marker, end="")
-        elif (marker == 'O'): #if it is a miss, the marker is colored blue
+        elif (marker == 'O'):- #if it is a miss, the marker is colored blue
             print(BLUE + marker, end="")
         else: 
             print(marker, end="")
@@ -178,17 +178,12 @@ def randomizeShips(): #this function randomizes the ships.
 
 #main algorithem
 def UpositionChecker(position, lengthOfShip, direction, shipCharacter): #this function checks to see if the user can legally place their ships at the spot that they pick. 
-    for x in range(lengthOfShip): #it checks the amount of spaces that the ship would take up
-
-        if (direction == 1): #vertical
-            if ((math.floor(position / 10)) + lengthOfShip > 10): #prevents the ship from printing outside of the bounds of the array
-                return False
+    if (direction == 1): #vertical
+        for x in range(lengthOfShip): #it checks the amount of spaces that the ship would take up
             if (MyBoard[position + (x*10)] != ' '): #checks to see if the spots bellow are clear
                 return False
-        else: #horizontal
-            if ((position % 10) + lengthOfShip > 10): #Prevents the ship from "spilling over" into the next row.
-                return False
-
+    else: #horizontal
+        for x in range(lengthOfShip): #it checks the amount of spaces that the ship would take up
             if (MyBoard[position +  x] != ' '): #checks to see if the spots to the right of the ship are clear
                 return False
     UshipPlacer(position, lengthOfShip, direction, shipCharacter) #calls another function to fill the array with the ship values
