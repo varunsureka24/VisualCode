@@ -56,7 +56,7 @@ def drawUserField(): # this is the function I use to print the user field
         marker = MyBoard[i] #this takes the value at each index in the array and stores it as a character
         if (marker == 'X'): #if it is a hit, then the marker is colored red
             print(RED + marker, end="")
-        elif (marker == 'O'):- #if it is a miss, the marker is colored blue
+        elif (marker == 'O'): #if it is a miss, the marker is colored blue
             print(BLUE + marker, end="")
         else: 
             print(marker, end="")
