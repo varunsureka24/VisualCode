@@ -5,6 +5,7 @@ battleship.clearField() #initiallizes the arrays
 battleship.randomizeShips() #randomizes enemy ships
 battleship.drawUserField() #prints the user's board
 
+
 #these while loops ask the user for a position to place their ship, and then a direction
 tempBool = False
 while(not tempBool): #carrier
@@ -19,20 +20,29 @@ while(not tempBool): #battleship
     ShipPos = input("Where do you want to place your battleship (4 long)? Enter a start point (enter the column then the row. Example: a1 or f8)")
     ShipDir = input("Enter a direction (\u001B[31m1\u001B[0m is vertical and goes down. \u001B[31m2\u001B[0m is horizontal and goes to the right)")
     tempBool = battleship.UpositionChecker(battleship.positionCalc(ShipPos), 4, int(ShipDir), 'B')
+    if (not tempBool):
+        print("Please place your ship in a valid location")
+        time.sleep(1)
 battleship.drawUserField()
 
 tempBool = False
 while(not tempBool): #cruiser
-    ShipPos = input("Where do you want to place your carrier (3 long)? Enter a start point (enter the column then the row. Example: a1 or f8)")
+    ShipPos = input("Where do you want to place your cruiser (3 long)? Enter a start point (enter the column then the row. Example: a1 or f8)")
     ShipDir = input("Enter a direction (\u001B[31m1\u001B[0m is vertical and goes down. \u001B[31m2\u001B[0m is horizontal and goes to the right)")
     tempBool = battleship.UpositionChecker(battleship.positionCalc(ShipPos), 3, int(ShipDir), 'c')
+    if (not tempBool):
+        print("Please place your ship in a valid location")
+        time.sleep(1)
 battleship.drawUserField()
 
 tempBool = False
-while(not tempBool): #submarine
+while(not tempBool): #submarine 
     ShipPos = input("Where do you want to place your submarine (3 long)? Enter a start point (enter the column then the row. Example: a1 or f8)")
     ShipDir = input("Enter a direction (\u001B[31m1\u001B[0m is vertical and goes down. \u001B[31m2\u001B[0m is horizontal and goes to the right)")
     tempBool = battleship.UpositionChecker(battleship.positionCalc(ShipPos), 3, int(ShipDir), 'S')
+    if (not tempBool):
+        print("Please place your ship in a valid location")
+        time.sleep(1)
 battleship.drawUserField()
 
 tempBool = False
@@ -40,6 +50,9 @@ while(not tempBool): #destroyer
     ShipPos = input("Where do you want to place your destroyer (4 long)? Enter a start point (enter the column then the row. Example: a1 or f8)")
     ShipDir = input("Enter a direction (\u001B[31m1\u001B[0m is vertical and goes down. \u001B[31m2\u001B[0m is horizontal and goes to the right)")
     tempBool = battleship.UpositionChecker(battleship.positionCalc(ShipPos), 2, int(ShipDir), 'D')
+    if (not tempBool):
+        print("Please place your ship in a valid location")
+        time.sleep(1)
 battleship.drawUserField()
 
 time.sleep(1)
